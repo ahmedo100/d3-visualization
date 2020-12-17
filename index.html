@@ -6,7 +6,7 @@
 
 body {
 	margin:auto;	
-	width: 885px;
+	width: 100%;
 	font: 10px arial;
 	padding: 25px;
 }
@@ -45,13 +45,13 @@ body {
 
 <script>
 
-d3.csv("https://raw.githubusercontent.com/ahmedo100/d3-visualization/master/DP_LIVE_30112020095639508%20-%20DP_LIVE_30112020095639508.csv").then(d => chart(d))
+d3.csv("https://raw.githubusercontent.com/ahmedo100/d3-visualization/master/owid-covid-data%20-%20owid-covid-data.csv").then(d => chart(d))
 
 function chart(data) {
     console.log(data)
 	var keys = data.columns.slice(1);
 
-    var parseTime = d3.timeParse("%Y-%m")	,
+    var parseTime = d3.timeParse("%Y-%m-%d")	,
         formatDate = d3.timeFormat("%Y-%m"),
 		bisectDate = d3.bisector(d => d.date).left,
 		formatValue = d3.format(",.0f");
@@ -78,7 +78,7 @@ function chart(data) {
 	var line = d3.line()
 		.curve(d3.curveCardinal)
 		.x(d => x(d.date))
-		.y(d => y(d.rang));
+		.y(d => y(d.val));
 
 	svg.append("g")
 		.attr("class","x-axis")
@@ -115,18 +115,18 @@ function chart(data) {
 
 	function update(input, speed) {
 
-		var copy = [keys[5]]
+		var copy = [keys[4]]
 
 		var cities = copy.map(function(id) {
 			return {
 				id: id,
-				values: data.map(d => {return {date: d.date, rang: +d[id]}})
+				values: data.map(d => {return {date: d.date, val: +d[id]}})
 			};
 		});
 
 		y.domain([
-			d3.min(cities, d => d3.min(d.values, c => c.rang)),
-			d3.max(cities, d => d3.max(d.values, c => c.rang))
+			d3.min(cities, d => d3.min(d.values, c => c.val)),
+			d3.max(cities, d => d3.max(d.values, c => c.val))
 		]).nice();
 
 		svg.selectAll(".y-axis").transition()
