@@ -1,0 +1,281 @@
+[
+    {
+      "Date": "2020-12-17",
+      "Infections": 74809456,
+      "Deces": 1657808,
+      "Guerisons": 42216011,
+      "TauxDeces": 2.22,
+      "TauxGuerison": 56.43,
+      "TauxInfection": 41.35
+    },
+    {
+      "Date": "2020-12-16",
+      "Infections": 74312897,
+      "Deces": 1649316,
+      "Guerisons": 42000649,
+      "TauxDeces": 2.22,
+      "TauxGuerison": 56.52,
+      "TauxInfection": 41.26
+    },
+    {
+      "Date": "2020-12-15",
+      "Infections": 73578476,
+      "Deces": 1635787,
+      "Guerisons": 41639004,
+      "TauxDeces": 2.22,
+      "TauxGuerison": 56.59,
+      "TauxInfection": 41.19
+    },
+    {
+      "Date": "2020-12-14",
+      "Infections": 72952592,
+      "Deces": 1621786,
+      "Guerisons": 47680014,
+      "TauxDeces": 2.22,
+      "TauxGuerison": 65.36,
+      "TauxInfection": 32.42
+    },
+    {
+      "Date": "2020-12-13",
+      "Infections": 72428976,
+      "Deces": 1612782,
+      "Guerisons": 47272654,
+      "TauxDeces": 2.23,
+      "TauxGuerison": 65.27,
+      "TauxInfection": 32.51
+    },
+    {
+      "Date": "2020-12-12",
+      "Infections": 71894641,
+      "Deces": 1605592,
+      "Guerisons": 46881108,
+      "TauxDeces": 2.23,
+      "TauxGuerison": 65.21,
+      "TauxInfection": 32.56
+    },
+    {
+      "Date": "2020-12-11",
+      "Infections": 71255863,
+      "Deces": 1595174,
+      "Guerisons": 45373244,
+      "TauxDeces": 2.24,
+      "TauxGuerison": 63.68,
+      "TauxInfection": 34.08
+    },
+    {
+      "Date": "2020-12-10",
+      "Infections": 70558287,
+      "Deces": 1582255,
+      "Guerisons": 44894374,
+      "TauxDeces": 2.24,
+      "TauxGuerison": 63.63,
+      "TauxInfection": 34.13
+    },
+    {
+      "Date": "2020-12-09",
+      "Infections": 69065295,
+      "Deces": 1569792,
+      "Guerisons": 44405143,
+      "TauxDeces": 2.27,
+      "TauxGuerison": 64.29,
+      "TauxInfection": 33.43
+    },
+    {
+      "Date": "2020-12-08",
+      "Infections": 68394896,
+      "Deces": 1557220,
+      "Guerisons": 43979196,
+      "TauxDeces": 2.28,
+      "TauxGuerison": 64.3,
+      "TauxInfection": 33.42
+    },
+    {
+      "Date": "2020-12-07",
+      "Infections": 67694538,
+      "Deces": 1544884,
+      "Guerisons": 43538473,
+      "TauxDeces": 2.28,
+      "TauxGuerison": 64.32,
+      "TauxInfection": 33.4
+    },
+    {
+      "Date": "2020-12-06",
+      "Infections": 67176784,
+      "Deces": 1536407,
+      "Guerisons": 43126841,
+      "TauxDeces": 2.29,
+      "TauxGuerison": 64.2,
+      "TauxInfection": 33.51
+    },
+    {
+      "Date": "2020-12-05",
+      "Infections": 66643089,
+      "Deces": 1529219,
+      "Guerisons": 42812893,
+      "TauxDeces": 2.29,
+      "TauxGuerison": 64.24,
+      "TauxInfection": 33.46
+    },
+    {
+      "Date": "2020-12-04",
+      "Infections": 66002417,
+      "Deces": 1519021,
+      "Guerisons": 42375035,
+      "TauxDeces": 2.3,
+      "TauxGuerison": 64.2,
+      "TauxInfection": 33.5
+    },
+    {
+      "Date": "2020-12-03",
+      "Infections": 65323959,
+      "Deces": 1506609,
+      "Guerisons": 41954548,
+      "TauxDeces": 2.31,
+      "TauxGuerison": 64.23,
+      "TauxInfection": 33.47
+    },
+    {
+      "Date": "2020-12-02",
+      "Infections": 64633369,
+      "Deces": 1494091,
+      "Guerisons": 41518775,
+      "TauxDeces": 2.31,
+      "TauxGuerison": 64.24,
+      "TauxInfection": 33.45
+    },
+    {
+      "Date": "2020-12-01",
+      "Infections": 63986746,
+      "Deces": 1481655,
+      "Guerisons": 41057391,
+      "TauxDeces": 2.32,
+      "TauxGuerison": 64.17,
+      "TauxInfection": 33.52
+    },
+    {
+      "Date": "2020-11-30",
+      "Infections": 63381559,
+      "Deces": 1468806,
+      "Guerisons": 40581812,
+      "TauxDeces": 2.32,
+      "TauxGuerison": 64.03,
+      "TauxInfection": 33.65
+    },
+    {
+      "Date": "2020-11-29",
+      "Infections": 62875510,
+      "Deces": 1460119,
+      "Guerisons": 40180425,
+      "TauxDeces": 2.32,
+      "TauxGuerison": 63.9,
+      "TauxInfection": 33.77
+    },
+    {
+      "Date": "2020-11-28",
+      "Infections": 62388796,
+      "Deces": 1453200,
+      "Guerisons": 39854327,
+      "TauxDeces": 2.33,
+      "TauxGuerison": 63.88,
+      "TauxInfection": 33.79
+    },
+    {
+      "Date": "2020-11-27",
+      "Infections": 61789548,
+      "Deces": 1443451,
+      "Guerisons": 39498584,
+      "TauxDeces": 2.34,
+      "TauxGuerison": 63.92,
+      "TauxInfection": 33.74
+    },
+    {
+      "Date": "2020-11-26",
+      "Infections": 61117378,
+      "Deces": 1432828,
+      "Guerisons": 39122049,
+      "TauxDeces": 2.34,
+      "TauxGuerison": 64.01,
+      "TauxInfection": 33.64
+    },
+    {
+      "Date": "2020-11-25",
+      "Infections": 60536107,
+      "Deces": 1422087,
+      "Guerisons": 38756871,
+      "TauxDeces": 2.35,
+      "TauxGuerison": 64.02,
+      "TauxInfection": 33.63
+    },
+    {
+      "Date": "2020-11-24",
+      "Infections": 59860692,
+      "Deces": 1409587,
+      "Guerisons": 38289808,
+      "TauxDeces": 2.35,
+      "TauxGuerison": 63.96,
+      "TauxInfection": 33.68
+    },
+    {
+      "Date": "2020-11-23",
+      "Infections": 59272239,
+      "Deces": 1396802,
+      "Guerisons": 37918382,
+      "TauxDeces": 2.36,
+      "TauxGuerison": 63.97,
+      "TauxInfection": 33.67
+    },
+    {
+      "Date": "2020-11-22",
+      "Infections": 58750214,
+      "Deces": 1388486,
+      "Guerisons": 37508309,
+      "TauxDeces": 2.36,
+      "TauxGuerison": 63.84,
+      "TauxInfection": 33.79
+    },
+    {
+      "Date": "2020-11-21",
+      "Infections": 58266415,
+      "Deces": 1381405,
+      "Guerisons": 37234667,
+      "TauxDeces": 2.37,
+      "TauxGuerison": 63.9,
+      "TauxInfection": 33.72
+    },
+    {
+      "Date": "2020-11-20",
+      "Infections": 57679881,
+      "Deces": 1372619,
+      "Guerisons": 36896290,
+      "TauxDeces": 2.38,
+      "TauxGuerison": 63.97,
+      "TauxInfection": 33.65
+    },
+    {
+      "Date": "2020-11-19",
+      "Infections": 57013698,
+      "Deces": 1360778,
+      "Guerisons": 36541036,
+      "TauxDeces": 2.39,
+      "TauxGuerison": 64.09,
+      "TauxInfection": 33.52
+    },
+    {
+      "Date": "2020-11-18",
+      "Infections": 56363111,
+      "Deces": 1349805,
+      "Guerisons": 36168192,
+      "TauxDeces": 2.39,
+      "TauxGuerison": 64.17,
+      "TauxInfection": 33.44
+    },
+    {
+      "Date": "2020-11-17",
+      "Infections": 55739179,
+      "Deces": 1338433,
+      "Guerisons": 35805271,
+      "TauxDeces": 2.4,
+      "TauxGuerison": 64.24,
+      "TauxInfection": 33.36
+    }
+  ]

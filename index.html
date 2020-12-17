@@ -45,19 +45,19 @@ body {
 
 <script>
 
-d3.csv("https://raw.githubusercontent.com/ahmedo100/d3-visualization/master/owid-covid-data%20-%20owid-covid-data.csv").then(d => chart(d))
+d3.csv("https://raw.githubusercontent.com/ahmedo100/d3-visualization/master/coronavirus.politologue.com-global-2020-12-17.csv").then(d => chart(d))
 
 function chart(data) {
     console.log(data)
 	var keys = data.columns.slice(1);
 
     var parseTime = d3.timeParse("%Y-%m-%d")	,
-        formatDate = d3.timeFormat("%Y-%m"),
-		bisectDate = d3.bisector(d => d.date).left,
+        formatDate = d3.timeFormat("%Y-%m-%d"),
+		bisectDate = d3.bisector(d => d.Date).left,
 		formatValue = d3.format(",.0f");
 
 	data.forEach(function(d) {
-		d.date = parseTime(d.date);
+		d.Date = parseTime(d.Date);
 		return d;
 	})
 
@@ -68,7 +68,7 @@ function chart(data) {
 
 	var x = d3.scaleTime()
 		.rangeRound([margin.left, width - margin.right])
-		.domain(d3.extent(data, d => d.date))
+		.domain(d3.extent(data, d => d.Date))
 
 	var y = d3.scaleLinear()
 		.rangeRound([height - margin.bottom, margin.top]);
@@ -77,7 +77,7 @@ function chart(data) {
 
 	var line = d3.line()
 		.curve(d3.curveCardinal)
-		.x(d => x(d.date))
+		.x(d => x(d.Date))
 		.y(d => y(d.val));
 
 	svg.append("g")
@@ -115,12 +115,12 @@ function chart(data) {
 
 	function update(input, speed) {
 
-		var copy = [keys[4]]
+		var copy = keys.slice(1,3);
 
 		var cities = copy.map(function(id) {
 			return {
 				id: id,
-				values: data.map(d => {return {date: d.date, val: +d[id]}})
+				values: data.map(d => {return {date: d.Date, val: +d[id]}})
 			};
 		});
 
@@ -184,23 +184,23 @@ function chart(data) {
 				d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
 			focus.select(".lineHover")
-				.attr("transform", "translate(" + x(d.date) + "," + height + ")");
+				.attr("transform", "translate(" + x(d.Date) + "," + height + ")");
 
 			focus.select(".lineHoverDate")
 				.attr("transform", 
-					"translate(" + x(d.date) + "," + (height + margin.bottom) + ")")
-				.text(formatDate(d.date));
+					"translate(" + x(d.Date) + "," + (height + margin.bottom) + ")")
+				.text(formatDate(d.Date));
 
 			focus.selectAll(".hoverCircle")
 				.attr("cy", e => y(d[e]))
-				.attr("cx", x(d.date));
+				.attr("cx", x(d.Date));
 
 			focus.selectAll(".lineHoverText")
 				.attr("transform", 
-					"translate(" + (x(d.date)) + "," + height / 2.5 + ")")
+					"translate(" + (x(d.Date)) + "," + height / 2.5 + ")")
 				.text(e => e + " " + "º" + formatValue(d[e]));
 
-			x(d.date) > (width - width / 4) 
+			x(d.Date) > (width - width / 4) 
 				? focus.selectAll("text.lineHoverText")
 					.attr("text-anchor", "end")
 					.attr("dx", -10)
