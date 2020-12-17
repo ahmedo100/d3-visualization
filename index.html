@@ -45,14 +45,14 @@ body {
 
 <script>
 
-d3.csv("https://raw.githubusercontent.com/ahmedo100/d3-visualization/master/coronavirus.politologue.com-global-2020-12-17.csv").then(d => chart(d))
+d3.json("https://raw.githubusercontent.com/ahmedo100/d3-visualization/master/data.json").then(d => chart(d))
 
 function chart(data) {
-    console.log(data)
-	var keys = data.columns.slice(1);
 
-    var parseTime = d3.timeParse("%Y-%m-%d")	,
-        formatDate = d3.timeFormat("%Y-%m-%d"),
+	var keys = Object.keys(data);
+
+	var parseTime = d3.timeParse("%Y-%m-%d"),
+		formatDate = d3.timeFormat("%Y-%m-%d"),
 		bisectDate = d3.bisector(d => d.Date).left,
 		formatValue = d3.format(",.0f");
 
@@ -78,7 +78,7 @@ function chart(data) {
 	var line = d3.line()
 		.curve(d3.curveCardinal)
 		.x(d => x(d.Date))
-		.y(d => y(d.val));
+		.y(d => y(d.degrees));
 
 	svg.append("g")
 		.attr("class","x-axis")
@@ -111,22 +111,22 @@ function chart(data) {
 		.attr("width", width - margin.right - margin.left)
 		.attr("height", height)
 
-	update(0, 0);
+	upDate(0, 0);   
 
-	function update(input, speed) {
+	function upDate(input, speed) {
 
-		var copy = keys.slice(1,3);
+		var copy = [keys[3]]
 
 		var cities = copy.map(function(id) {
 			return {
 				id: id,
-				values: data.map(d => {return {date: d.Date, val: +d[id]}})
+				values: data.map(d => {return {Date: d.Date, degrees: +d[id]}})
 			};
 		});
 
 		y.domain([
-			d3.min(cities, d => d3.min(d.values, c => c.val)),
-			d3.max(cities, d => d3.max(d.values, c => c.val))
+			d3.min(cities, d => d3.min(d.values, c => c.degrees)),
+			d3.max(cities, d => d3.max(d.values, c => c.degrees))
 		]).nice();
 
 		svg.selectAll(".y-axis").transition()
@@ -181,7 +181,7 @@ function chart(data) {
 				i = bisectDate(data, x0, 1),
 				d0 = data[i - 1],
 				d1 = data[i],
-				d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+				d = x0 - d0.Date > d1.Date - x0 ? d1 : d0;
 
 			focus.select(".lineHover")
 				.attr("transform", "translate(" + x(d.Date) + "," + height + ")");
@@ -209,15 +209,8 @@ function chart(data) {
 					.attr("dx", 10)
 		}
 	}
-
-	var selectbox = d3.select("#selectbox")
-		.on("change", function() {
-			update(this.value, 750);
-		})
-}
-
 	
-
+}
 
 </script>
 </body>
