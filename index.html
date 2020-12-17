@@ -40,20 +40,19 @@ body {
 </head>
 
 <body>
-
-
-<svg id="chart" width="850" height="410"></svg>
 <script src="https://d3js.org/d3.v5.min.js"></script>
+<svg id="chart" width="850" height="410"></svg>
+
 <script>
 
-d3.csv("data.csv").then(d => chart(d))
+d3.csv("https://raw.githubusercontent.com/YannLeNorment/visualisation_vendee/main/apivia.csv").then(d => chart(d))
 
 function chart(data) {
 
 	var keys = data.columns.slice(1);
 
-	var parseTime = d3.timeParse("%Y%m%d"),
-		formatDate = d3.timeFormat("%Y-%m-%d"),
+    var parseTime = d3.timeParse("%d/%m/%Y %H:%M")	,
+        formatDate = d3.timeFormat("%d/%m/%Y %H:%M"),
 		bisectDate = d3.bisector(d => d.date).left,
 		formatValue = d3.format(",.0f");
 
@@ -79,7 +78,7 @@ function chart(data) {
 	var line = d3.line()
 		.curve(d3.curveCardinal)
 		.x(d => x(d.date))
-		.y(d => y(d.degrees));
+		.y(d => y(d.rang));
 
 	svg.append("g")
 		.attr("class","x-axis")
@@ -112,22 +111,22 @@ function chart(data) {
 		.attr("width", width - margin.right - margin.left)
 		.attr("height", height)
 
-	update(d3.select('#selectbox').property('value'), 0);
+	update(0, 0);
 
 	function update(input, speed) {
 
-		var copy = keys.filter(f => f.includes(input))
+		var copy = keys
 
 		var cities = copy.map(function(id) {
 			return {
 				id: id,
-				values: data.map(d => {return {date: d.date, degrees: +d[id]}})
+				values: data.map(d => {return {date: d.date, rang: +d[id]}})
 			};
 		});
 
 		y.domain([
-			d3.min(cities, d => d3.min(d.values, c => c.degrees)),
-			d3.max(cities, d => d3.max(d.values, c => c.degrees))
+			d3.min(cities, d => d3.min(d.values, c => c.rang)),
+			d3.max(cities, d => d3.max(d.values, c => c.rang))
 		]).nice();
 
 		svg.selectAll(".y-axis").transition()
@@ -216,6 +215,9 @@ function chart(data) {
 			update(this.value, 750);
 		})
 }
+
+	
+
 
 </script>
 </body>
